@@ -61,29 +61,37 @@ let {projectTitle, projectDescription, installationInstructions, usageInfo, lice
 
 let readMeContent = `
 
-*${projectTitle}
+#${projectTitle}
 
-** Project Description
+
+##Project Description
 ${projectDescription}
 
-** Table of Contents
+##Table of Contents
 
-** Installation
+* [Installation] (#installation) 
+* [Usage] (#usage) 
+* [License] (#license)
+* [Contributing] (#contributing)
+* [Tests] (#license)
+* [Questions](#questions)
+
+## Installation
 ${installationInstructions}
 
-** Usage
+## Usage
 ${usageInfo}
 
-** License
+## License
 ${generateLicense(license)}
 
-** Contributing
+## Contributing
 ${contributionGuidelines}
 
-** Test
+## Tests
 ${tests}
 
-** Questions
+## Questions
 Any questions can be directed to:
 Github:[${gitHubId}](https://github.com/${gitHubId})
 or 
@@ -131,5 +139,6 @@ function generateLicense(license){
     return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
 
     else if (license === 'none')
+    return "none"
 
 }
