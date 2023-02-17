@@ -2,7 +2,7 @@ import inquirer from "inquirer";
 import fs from "fs/promises";
 
 
-let {projectTitle, projectDescription, installationInstructions, usageInfo, contributionGuidelines, tests} = await inquirer
+let {projectTitle, projectDescription, installationInstructions, usageInfo, license, contributionGuidelines, tests, gitHubId, email} = await inquirer
     .prompt([
 {
     type:'input',
@@ -41,6 +41,20 @@ let {projectTitle, projectDescription, installationInstructions, usageInfo, cont
     name: 'tests',
     message: "Provide test instructions",
 },
+{
+    type:'input',
+    name: 'gitHubID',
+    message: "What is your Git Hub ID?",
+},
+
+{
+    type:'input',
+    name: 'email',
+    message: "What is your email address?",
+},
+
+
+
 
     ])
 
@@ -70,6 +84,11 @@ ${contributionGuidelines}
 ${tests}
 
 ** Questions
+Any questions can be directed to:
+Github:[${gitHubId}](https://github.com/${gitHubId})
+or 
+${email}
+
 `
 fs.writeFile("README.MD", readMeContent)
 
@@ -112,6 +131,5 @@ function generateLicense(license){
     return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)";
 
     else if (license === 'none')
-    
-}
 
+}
