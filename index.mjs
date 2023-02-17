@@ -6,7 +6,7 @@ let {projectTitle, projectDescription, installationInstructions, usageInfo, lice
     .prompt([
 {
     type:'input',
-    name: 'projectTile',
+    name: 'projectTitle',
     message: "What is the name of your project?",
 },
 {
@@ -43,7 +43,7 @@ let {projectTitle, projectDescription, installationInstructions, usageInfo, lice
 },
 {
     type:'input',
-    name: 'gitHubID',
+    name: 'gitHubId',
     message: "What is your Git Hub ID?",
 },
 
@@ -61,19 +61,19 @@ let {projectTitle, projectDescription, installationInstructions, usageInfo, lice
 
 let readMeContent = `
 
-#${projectTitle}
+# ${projectTitle}
 
 
-##Project Description
+## Project Description
 ${projectDescription}
 
-##Table of Contents
+## Table of Contents
 
-* [Installation] (#installation) 
-* [Usage] (#usage) 
-* [License] (#license)
-* [Contributing] (#contributing)
-* [Tests] (#license)
+* [Installation](#installation) 
+* [Usage](#usage) 
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#license)
 * [Questions](#questions)
 
 ## Installation
