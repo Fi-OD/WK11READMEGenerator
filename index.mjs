@@ -27,9 +27,8 @@ let {projectTitle, projectDescription, installationInstructions, usageInfo, lice
 {
     type:'list',
     name: 'license',
-    message: 'what license are you using?',
+    message: 'What license are you using?',
     choices: ['none','Apache License 2.0','GNU general Public License v3.0','MIT License','BSD 2 Clause "simplified" License','BSD 3 Clause "New" or "revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU affero General Public License v3.0', 'GNU General Public License v2.0', 'Mozilla Public License 2.0', 'The Unlicense'],
-    filter(val) {}
 },
 {
     type:'input',
@@ -53,10 +52,13 @@ let {projectTitle, projectDescription, installationInstructions, usageInfo, lice
     message: "What is your email address?",
 },
 
-
-
-
     ])
+
+    let licenseBadge = "";
+    if (license){
+        licenseBadge = generateLicense(license);
+    }
+
 
 
 let readMeContent = `
